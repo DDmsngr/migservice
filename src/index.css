@@ -1,0 +1,62 @@
+@import '@fontsource-variable/onest';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Onest Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --color-ink: #0b1b2e;
+  --color-ink-2: #14293f;
+  --color-paper: #f4f5f7;
+  --color-line: #dde1e7;
+  --color-brand: #e11d2e;
+  --color-brand-dark: #b91423;
+  --color-steel: #1d4ed8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-[15px] font-semibold transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-dark active:scale-[.98];
+  }
+  .btn-ghost {
+    @apply border border-white/25 text-white hover:bg-white/10;
+  }
+  .btn-outline {
+    @apply border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-white;
+  }
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[.18em] text-brand;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-[15px] outline-none transition placeholder:text-ink/40 focus:border-ink focus:ring-4 focus:ring-ink/10;
+  }
+}
