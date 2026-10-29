@@ -59,6 +59,24 @@ export default function Footer() {
           <span>Информация на сайте не является публичной офертой</span>
         </div>
       </div>
+      <div className="border-t border-white/10 bg-black/25">
+        <div className="container-x flex justify-center py-5">
+          <a
+            href="https://deepdrift.tech"
+            target="_blank"
+            rel="noreferrer"
+            className="group flex items-center gap-3 text-sm text-white/55 transition hover:text-white"
+          >
+            <img src={`${BASE}img/ae-logo.png`} alt="" className="h-9 w-auto" />
+            <span>
+              Сайт создан: <b className="font-semibold text-[#e6b94a]">студия Алексея Евтушенко</b>
+              <span className="ml-2 underline decoration-white/30 underline-offset-4 group-hover:decoration-[#e6b94a]">
+                портфолио →
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
     </footer>
   )
 }
